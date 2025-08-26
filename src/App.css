@@ -25,6 +25,12 @@
     initial-value: #6896ca;
 }
 
+@property --main-blue--dark {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #002e48;
+}
+
 @property --main-yellow {
     syntax: "<color>";
     inherits: false;
