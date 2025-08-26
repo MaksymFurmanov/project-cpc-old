@@ -11,7 +11,9 @@ export default function Header({sidebarToggle, setSidebarToggle}) {
     return (
         <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
             <div className={styles.logo}>
-                <img src={"/img/logo-cpc.png"} alt={""}/>
+                <a href={"/"}>
+                    <img src={"/img/logo-cpc.png"} alt={""}/>
+                </a>
             </div>
             <NavBar/>
             <div className={styles.buttonsRight}>
