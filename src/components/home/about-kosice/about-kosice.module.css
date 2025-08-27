@@ -12,10 +12,10 @@
     position: relative;
     width: 100%;
     height: 100%; /* Переконайтеся, що висота визначена */
-    overflow: hidden; 
-  }
-  
-  /* Створюємо псевдоелемент для фону */
+    overflow: hidden;
+}
+
+/* Створюємо псевдоелемент для фону */
 .bgLayer::before {
     content: "";
     position: absolute;
@@ -23,19 +23,17 @@
     left: 0;
     width: 100%;
     height: 100%;
-    
+
     background-image: url("/public/img/about-kosice.jpg");
     background-attachment: fixed;
     background-size: cover;
     background-position: 50% 50%;
     background-repeat: no-repeat;
-    
+
     /* ⚠️ Ключові властивості для iOS: */
     z-index: -1;
-    transform: translateZ(0); /* Запускає апаратне прискорення */
-    -webkit-transform: translateZ(0); /* Для сумісності з Safari */
 }
-  
+
 
 .overlay {
     position: absolute;
