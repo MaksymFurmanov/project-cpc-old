@@ -32,8 +32,6 @@
     
     /* ⚠️ Ключові властивості для iOS: */
     z-index: -1;
-    transform: translateZ(0); /* Запускає апаратне прискорення */
-    -webkit-transform: translateZ(0); /* Для сумісності з Safari */
 }
   
 
