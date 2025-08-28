@@ -18,9 +18,22 @@
     padding: 0.25dvh 2em;
 }
 
-.logo img {
+.logo {
+    fill: #f4f4f4;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.kosiceLogo {
     width: 7em;
     max-height: 9dvh;
+}
+
+.cpcLogo {
+    display: none;
+    width: 9em;
+    max-height: 8dvh;
 }
 
 .links {
@@ -162,3 +175,10 @@
         display: flex;
     }
 }
+
+@media (min-width: 768px) {
+    .cpcLogo {
+        display: block;
+    }
+}
+
