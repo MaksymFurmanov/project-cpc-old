@@ -5,7 +5,7 @@ import LanguageSwitcher from "./language-switcher";
 import useScrolledFromTop from "../../hooks/useScrolledFromTop";
 import Socials from "./socials";
 import {ReactComponent as KosiceLogo} from "../../assets/logo-white.svg";
-import {ReactComponent as CPCLogo} from "../../assets/logo-cpc-text-cropped.svg";
+import {ReactComponent as CPCLogo} from "../../assets/logo-cpc.svg";
 
 export default function Header({
                                    sidebarToggle, setSidebarToggle
