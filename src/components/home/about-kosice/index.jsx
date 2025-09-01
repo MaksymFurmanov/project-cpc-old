@@ -1,14 +1,24 @@
 import styles from "./about-kosice.module.css";
 import {useTranslation} from "react-i18next";
+import {useEffect, useRef} from "react";
 
 export default function AboutKosice() {
     const {t} = useTranslation("home");
+    const bgLayerRef = useRef(null);
+
+    useEffect(() => {
+        const isIos = /iPad|iPhone|iPod/.test(navigator.userAgent);
+        const bgElement = bgLayerRef.current;
+
+        if(isIos) {
+            bgElement.style.backgroundAttachment = "unset";
+        }
+
+    }, [navigator.userAgent]);
 
     return (
         <article>
-            <div />
-
-            <div className={styles.bgLayer}>
+            <div className={styles.bgLayer} ref={bgLayerRef}>
                 <div className={styles.overlay}/>
                 <div className={styles.content}>
                     <h2>
