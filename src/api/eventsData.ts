@@ -18,13 +18,17 @@ export async function getEvents(): Promise<PlannedEvent[]> {
 
         return response.data.records.map((record: any) => ({
             id: record.id,
-            title: record.fields["Názov udalosti"],
-            description: record.fields["Popis udalosti"],
-            date: record.fields["Dátum udalosti"],
-            image:
-                record.fields["Obrázok udalosti"] &&
-                record.fields["Obrázok udalosti"].length > 0
-                    ? record.fields["Obrázok udalosti"][0].url
+            titleSK: record.fields["TitleSK"],
+            titleUA: record.fields["TitleUA"],
+            titleEN: record.fields["TitleEN"],
+            descriptionSK: record.fields["DescriptionSK"],
+            descriptionUA: record.fields["DescriptionUA"],
+            descriptionEN: record.fields["DescriptionEN"],
+            date: record.fields["Date"],
+            images:
+                record.fields["Image"] &&
+                record.fields["Image"].length > 0
+                    ? record.fields["Image"].map((img: any) => img.url)
                     : null,
         }));
     } catch (error) {

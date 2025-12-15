@@ -2,8 +2,7 @@ import styles from "./pages.module.css";
 import {useQuery} from "@tanstack/react-query";
 import {getEvents} from "../api/eventsData";
 import {PlannedEvent} from "../types";
-import EventsGreed from "../components/events/events-greed";
-import EventsCalendar from "../components/events/events-calendar";
+import EventsList from "../components/events/events-greed";
 import {useTranslation} from "react-i18next";
 
 export default function Events() {
@@ -22,8 +21,7 @@ export default function Events() {
             <h1 className={styles.pageTitle}>
                 {t("pageTitle")}
             </h1>
-            {events && <EventsGreed events={events}/>}
-            <EventsCalendar events={events}/>
+            {events && <EventsList events={events}/>}
         </div>
     );
 }

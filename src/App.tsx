@@ -4,11 +4,11 @@ import Home from "./pages/home";
 import NavSidebar from "./components/nav-sidebar";
 import {useState} from "react";
 import Header from "./components/header";
-import Footer from "./components/footer";
 import Events from "./pages/events";
+import Footer from "./components/footer";
 
 function App() {
-    const [sidebarToggle, setSidebarToggle] = useState(false);
+    const [sidebarToggle, setSidebarToggle] = useState<boolean>(false);
 
     const closeIfOpened = () => {
         if (sidebarToggle) setSidebarToggle(false);
@@ -32,7 +32,8 @@ function App() {
 
                     <Routes>
                         <Route index element={<Home/>}/>
-                        <Route path={"/podujatia"} element={<Events/>}/>
+                        <Route element={<Events/>} path={"events"}/>
+                        <Route element={<Events/>} path={"event/[]"}/>
                     </Routes>
 
                     <Footer/>
