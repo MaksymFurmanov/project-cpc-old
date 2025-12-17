@@ -16,7 +16,7 @@ body.embedded #embedBottomBarContainer {
   display: none;
 }
 
-* {
+.not-selectable {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;

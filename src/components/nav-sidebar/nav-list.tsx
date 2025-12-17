@@ -20,6 +20,7 @@ export default function NavList({closeIfOpened}:{
                 return (
                     <li key={index}
                         onClick={() => handleClick(link.url)}
+                        className={"not-selectable"}
                     >
                         {t(link.label)}
                     </li>
