@@ -22,7 +22,7 @@ function App() {
     return (
         <BrowserRouter>
             <main>
-                <NavSidebar sidebarToggle={sidebarToggle}/>
+                <NavSidebar sidebarToggle={sidebarToggle} closeIfOpened={closeIfOpened}/>
                 <div className={`content ${sidebarToggle && 'moveContent'}`}
                      onClick={() => {
                          closeIfOpened();

@@ -33,6 +33,7 @@ export default function ActivitiesList() {
                                       activity={activity}
                                       lang={lang}
                         />
+                        
                         {index !== activities.length - 1 && (
                             <div className={styles.divider}/>
                         )}
