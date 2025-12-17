@@ -10,15 +10,15 @@ import Gallery from "./gallery";
 const MAX_DESCRIPTION_LENGTH = 450;
 const SEPARATE_PAGE_THRESHOLD = 500;
 
-export default function ActivityCard({event, lang}: {
-    event: Activity,
+export default function ActivityCard({activity, lang}: {
+    activity: Activity,
     lang: string
 }) {
     const navigate = useNavigate();
 
     const {title, text, date} = useMemo(
-        () => localizeActivity(event, lang),
-        [event, lang]
+        () => localizeActivity(activity, lang),
+        [activity, lang]
     );
 
     if(!text || !title || !date) return <></>;
@@ -27,7 +27,7 @@ export default function ActivityCard({event, lang}: {
 
     const titleBtnHandler = () => {
         if(!separateText) return;
-        navigate(`/event/${event.id}`)
+        navigate(`/event/${activity.id}`)
     }
 
     const textSliced = separateText
@@ -36,7 +36,7 @@ export default function ActivityCard({event, lang}: {
 
     return (
         <div>
-            <Gallery images={event.images}/>
+            <Gallery images={activity.images}/>
 
             <div className={styles.textContent}>
                 <h2 className={clsx(separateText && styles.hoverEffect)}
@@ -49,7 +49,7 @@ export default function ActivityCard({event, lang}: {
                 <p className={styles.text}>
                     {textSliced}
                 </p>
-                {separateText && <ReadMoreBtn id={event.id}/>}
+                {separateText && <ReadMoreBtn id={activity.id}/>}
             </div>
         </div>
     );

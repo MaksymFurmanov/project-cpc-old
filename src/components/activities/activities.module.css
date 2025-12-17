@@ -97,15 +97,7 @@
         font-size: 1rem;
     }
 
-    .listContainer {
-    }
-
     .image {
         aspect-ratio: 3/1;
-    }
-}
-
-@media (min-width: 1024px) {
-    .listContainer {
     }
 }

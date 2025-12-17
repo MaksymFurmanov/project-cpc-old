@@ -1,7 +1,7 @@
 const navLinks = [
     {
         label: 'contacts',
-        url: '#contacts',
+        url: `/#contacts`,
     },
     {
         label: 'activities',

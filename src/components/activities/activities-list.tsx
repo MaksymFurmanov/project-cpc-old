@@ -1,28 +1,34 @@
 import styles from "./activities.module.css";
 import ActivityCard from "./activity-card";
-import {Activity} from "../../types";
 import {useTranslation} from "react-i18next";
-import {useCallback} from "react";
+import {useMemo} from "react";
+import {useSuspenseQuery} from "@tanstack/react-query";
+import {Activity} from "../../types";
+import {getActivities} from "../../api/activitiesData";
 
-export default function ActivitiesList({events}: {
-    events: Activity[]
-}) {
+export default function ActivitiesList() {
+    const {data: activities} = useSuspenseQuery<Activity[]>({
+        queryKey: ["activities"],
+        queryFn: getActivities,
+        staleTime: 1000 * 60 * 5,
+    });
+
     const {i18n} = useTranslation();
     const lang = i18n.language;
 
-    const sorted = useCallback(() => {
-        return events.sort((a, b) => {
+    const sorted = useMemo(() => {
+        return [...activities].sort((a, b) => {
             if (a.date > b.date) return -1;
             if (a.date < b.date) return 1;
             return 0;
         });
-    }, [events])();
+    }, [activities]);
 
     return (
         <div className={styles.listContainer}>
-            {sorted && sorted.map((event) => (
-                <ActivityCard key={event.id}
-                              event={event}
+            {sorted && sorted.map((activity) => (
+                <ActivityCard key={activity.id}
+                              activity={activity}
                               lang={lang}
                 />
             ))}

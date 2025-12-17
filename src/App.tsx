@@ -33,8 +33,10 @@ function App() {
 
                     <Routes>
                         <Route index element={<Home/>}/>
-                        <Route element={<Activities/>} path={"/activities"}/>
-                        <Route element={<Activity/>} path={"/activity/:id"}/>
+
+                        <Route path={"/activities"} element={<Activities/>}/>
+
+                        <Route path={"/activity/:id"} element={<Activity/>}/>
                     </Routes>
 
                     <Footer/>
