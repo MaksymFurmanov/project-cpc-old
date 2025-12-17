@@ -4,8 +4,8 @@ const navLinks = [
         url: '#contacts',
     },
     {
-        label: 'events',
-        url: '/events',
+        label: 'activities',
+        url: '/activities',
     },
 ];
 

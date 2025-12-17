@@ -10,11 +10,11 @@
   },
   "services": {
     "title": "Naše služby",
-    "schools": "Hľadanie školy/školstva",
-    "translation": "Tlmočenie",
+    "schools": "Hľadanie školky/školy",
+    "translation": "Tlmočenie a sprevádzanie",
     "institutions": "Prvý kontakt s Košickými inštitúciami",
-    "police": "Otázky o cudzineckej polícii",
-    "print": "Vyplnenie tlačív a tlač",
+    "police": "Cudzinecka polícia: legalizácia",
+    "print": "Vyplnenie žiadostí/formulárov",
     "integrationService": "Celkové integračné poradenstvo"
   },
   "contactMaps": {

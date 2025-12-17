@@ -4,8 +4,9 @@ import Home from "./pages/home";
 import NavSidebar from "./components/nav-sidebar";
 import {useState} from "react";
 import Header from "./components/header";
-import Events from "./pages/events";
+import Activities from "./pages/activities";
 import Footer from "./components/footer";
+import Activity from './pages/activity';
 
 function App() {
     const [sidebarToggle, setSidebarToggle] = useState<boolean>(false);
@@ -32,8 +33,8 @@ function App() {
 
                     <Routes>
                         <Route index element={<Home/>}/>
-                        <Route element={<Events/>} path={"events"}/>
-                        <Route element={<Events/>} path={"event/[]"}/>
+                        <Route element={<Activities/>} path={"/activities"}/>
+                        <Route element={<Activity/>} path={"/activity/:id"}/>
                     </Routes>
 
                     <Footer/>

@@ -1,8 +1,9 @@
-import {PlannedEvent} from "../types";
+import {Activity} from "../types";
 
-const localizeEvent = (event: PlannedEvent, lang: string): {
+const localizeActivity = (event: Activity, lang: string): {
     title: string,
-    text: string
+    text: string,
+    date: string
 } => {
     let title: string, text: string;
     switch (lang) {
@@ -19,7 +20,9 @@ const localizeEvent = (event: PlannedEvent, lang: string): {
             text = event.descriptionSK;
     }
 
-    return {title, text}
+    const date = new Date(event.date).toLocaleDateString(lang)
+
+    return {title, text, date}
 }
 
-export default localizeEvent;
+export default localizeActivity;

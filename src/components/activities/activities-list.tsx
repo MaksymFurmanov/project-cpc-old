@@ -1,11 +1,11 @@
-import styles from "./events.module.css";
-import EventsCard from "./events-card";
-import {PlannedEvent} from "../../types";
+import styles from "./activities.module.css";
+import ActivityCard from "./activity-card";
+import {Activity} from "../../types";
 import {useTranslation} from "react-i18next";
 import {useCallback} from "react";
 
-export default function EventsList({events}: {
-    events: PlannedEvent[]
+export default function ActivitiesList({events}: {
+    events: Activity[]
 }) {
     const {i18n} = useTranslation();
     const lang = i18n.language;
@@ -21,9 +21,9 @@ export default function EventsList({events}: {
     return (
         <div className={styles.listContainer}>
             {sorted && sorted.map((event) => (
-                <EventsCard key={event.id}
-                            event={event}
-                            lang={lang}
+                <ActivityCard key={event.id}
+                              event={event}
+                              lang={lang}
                 />
             ))}
         </div>
