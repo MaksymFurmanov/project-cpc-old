@@ -26,12 +26,19 @@ export default function ActivitiesList() {
 
     return (
         <div className={styles.listContainer}>
-            {sorted && sorted.map((activity) => (
-                <ActivityCard key={activity.id}
-                              activity={activity}
-                              lang={lang}
-                />
-            ))}
+            {sorted && sorted.map((activity, index) => {
+                return (
+                    <>
+                        <ActivityCard key={activity.id}
+                                      activity={activity}
+                                      lang={lang}
+                        />
+                        {index !== activities.length - 1 && (
+                            <div className={styles.divider}/>
+                        )}
+                    </>
+                )
+            })}
         </div>
     );
 }
